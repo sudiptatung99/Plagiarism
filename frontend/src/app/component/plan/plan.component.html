@@ -1,0 +1,237 @@
+<section class="breadcrumb-section">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="['/workspace']">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Plan</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard-section">
+    <div class="container">
+        <div class="row">
+            <div class="dashboard-part">
+                <div *ngIf="isLoader" class="m-auto">
+                    <app-loader></app-loader>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" *ngIf="!isLoader">
+            <div class="col-md-6">
+                <div class="full_rate_plan">
+                    <div class="full_rate_plan_header">
+                        <h5>Full Rate Plan</h5>
+                        <i class="far fa-question-circle"></i>
+                        <span>
+                            For Students, Postgraduate Students, and Scientists
+                        </span>
+                    </div>
+                    <div class="full_rate_plan_body">
+                        <p class="plan_rate">from <span>&#8377;{{initial_price }}</span> / Single Document</p>
+                        <p class="pl_modules text-black-50">Search in all <span><u>Unified Collection Modules</u></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="purchase_check_cont mt-4">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="purchase_check_wrap">
+                                <!-- <div class="purchase_check_wrap_header">
+                                    <h5>Purchase checks</h5><span>Full</span>
+                                </div> -->
+                                <div class="purchase_check_wrap_body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="pl_check_no d-flex align-items-center">
+                                            <p>Number of Documents:</p> <input type="text" min="1" max="25"
+                                                class="form-control form-control-sm" value="{{ input_value }}"
+                                                (change)="getInput($event)">
+                                        </div>
+                                        <div class="pl_price">
+                                            <p>The cost of {{ input_value }} check: <span
+                                                    class="current_price">&#8377;{{price }}</span>
+                                                <!-- <span class="discount_price"><s>&#8377;299.00</s></span></p> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="price_range">
+                                        <input type="range" id="customRange" name="points" value="{{ input_value }}"
+                                            min="1" max="25" (change)="getRange($event)">
+                                        <div class="dicsount_range">
+                                            <label class="_1" placement="bottom" ngbTooltip="Discount">
+                                                1
+                                            </label>
+                                            <label class="_2" placement="bottom" ngbTooltip="Discount">
+                                                2
+                                            </label>
+                                            <label class="_10" placement="bottom" ngbTooltip="Discount">
+                                                10
+                                            </label>
+                                            <label class="_20" placement="bottom" ngbTooltip="Discount">
+                                                20
+                                            </label>
+                                            <label class="_25" placement="bottom" ngbTooltip="Discount">
+                                                25
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="check_list d-flex flex-wrap justify-content-between">
+                                        <div class="check_list_items me-4">
+                                            <i class="far fa-check"></i> Documents Valid Until: 180 Days
+                                        </div>
+                                        <div class="check_list_items">
+                                            <i class="far fa-check"></i> Documents Using All Modules
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="pl_cost_wrap">
+                                <div class="pl_cost_wrap_header">
+                                    <div class="border-bottom d-flex justify-content-between pb-3 border-primary">
+                                        <span class="me-3">Total Cost</span>
+                                        <span>&#8377;{{price }}</span>
+                                    </div>
+                                </div>
+                                <div class="pl_cost_wrap_body">
+                                    <button type="button" (click)="pay()"  class="btn btn-theme-red mb-3 w-100">Go To
+                                        payment</button>
+
+                                    <!-- <form #form ngNoForm id="nonseamless" method="post" name="redirect"
+                                        action="https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction">
+                                        <input type="hidden" id="encRequest" name="encRequest" [ngModel]="encRequest">
+                                        <input type="hidden" name="access_code" id="access_code" [ngModel]="accessCode">
+                                    </form> -->
+                                    <form #form ngNoForm
+                                    id="nonseamless" 
+                                    method="post" 
+                                    name="redirect" 
+                                    action="https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction">
+                                      <input type="hidden" id="encRequest" name="encRequest" value="{{encRequest}}">
+                                      <input type="hidden" name="access_code" id="access_code" value="{{accessCode}}">
+                                  </form>
+                                    <!-- <div class="accordion mb-3" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                    Payment method: Bank card
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    Lorem Ipsum Dummy Text
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="pay_details">
+                                        <div class="pay_details_items">
+                                            <div class="pay_names">
+                                                No. of Documents ({{ input_value }})
+                                            </div>
+                                            <div class="pay_Amount">
+                                                &#8377;{{ price }}
+                                            </div>
+                                        </div>
+                                        <!-- <div class="pay_details_items">
+                                            <div class="pay_names">
+                                                Discount
+                                            </div>
+                                            <div class="pay_Amount">
+                                                &#8377; 299.00
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="pay_details_items">
+                                            <div class="pay_names">
+                                                Promocode discount
+                                            </div>
+                                            <div class="pay_Amount">
+                                                &#8377; 0.00
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="pay_details_items">
+                                            <div class="pay_names">
+                                                Payments with points (0)
+                                            </div>
+                                            <div class="pay_Amount">
+                                                &#8377; 0.00
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <!-- <div class="d-flex justify-content-between pl_pay_points">
+                                        <div class="form-check me-3">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Pay with Points
+                                            </label>
+                                        </div>
+                                        <i class="far fa-question-circle"></i>
+                                    </div> -->
+                                </div>
+                                <div class="border-top pl_promo_apply pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0"
+                                                y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                                                xml:space="preserve" class="">
+                                                <g>
+                                                    <path
+                                                        d="M287 151c-24.813 0-45 20.187-45 45s20.187 45 45 45 45-20.187 45-45-20.187-45-45-45zm0 60c-8.271 0-15-6.729-15-15s6.729-15 15-15 15 6.729 15 15-6.729 15-15 15zM407 271c-24.813 0-45 20.187-45 45s20.187 45 45 45 45-20.187 45-45-20.187-45-45-45zm0 60c-8.271 0-15-6.729-15-15s6.729-15 15-15 15 6.729 15 15-6.729 15-15 15zM415.32 153.519c-6.891-4.594-16.206-2.732-20.801 4.161l-120 180c-4.595 6.892-2.732 16.205 4.161 20.801 6.892 4.594 16.205 2.733 20.801-4.161l120-180c4.595-6.893 2.732-16.206-4.161-20.801z"
+                                                        fill="#adadad" opacity="1" data-original="#000000" class="">
+                                                    </path>
+                                                    <path
+                                                        d="M497 91H15c-8.284 0-15 6.716-15 15v90c0 8.284 6.716 15 15 15 24.813 0 45 20.187 45 45s-20.187 45-45 45c-8.284 0-15 6.716-15 15v90c0 8.284 6.716 15 15 15h482c8.284 0 15-6.716 15-15V106c0-8.284-6.716-15-15-15zm-15 300H150v-15c0-8.284-6.716-15-15-15s-15 6.716-15 15v15H30v-61.506c34.191-6.969 60-37.275 60-73.494s-25.809-66.524-60-73.493V121h91.25v15c0 8.284 6.716 15 15 15s15-6.716 15-15v-15H482v270z"
+                                                        fill="#adadad" opacity="1" data-original="#000000" class="">
+                                                    </path>
+                                                    <path
+                                                        d="M135 271c-8.284 0-15 6.716-15 15v30c0 8.284 6.716 15 15 15s15-6.716 15-15v-30c0-8.284-6.716-15-15-15zM135 181c-8.284 0-15 6.716-15 15v30c0 8.284 6.716 15 15 15s15-6.716 15-15v-30c0-8.284-6.716-15-15-15z"
+                                                        fill="#adadad" opacity="1" data-original="#000000" class="">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <span class="ms-2">
+                                                <b>Promocode</b>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            Enter
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control mt-3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <p class="mb-0 text-black-50 mt-3"><i class="far fa-info-circle"></i> Payment must be made no later than
+                    24 hours from the payment service issues the invoice.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $('[data-bs-toggle="tooltip"]').tooltip();
+    $('[data-bs-toggle="tooltip"]').click(function () {
+        $(this).tooltip('hide');
+    });
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>

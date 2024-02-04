@@ -1,0 +1,572 @@
+.top_btn .nk-nav{
+    column-gap: 17px;
+}
+.add_btn_head {
+    background-color: #f9b0b0;
+    border-radius: 20px;
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.35);
+}
+.add_btn_head .nk-nav-text{
+    color: rgb(212, 11, 11);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.add_btn_head a em{
+    color: rgb(212, 11, 11);
+
+    font-size: 20px;
+}
+
+.add_btn_head_blue {
+    background-color: #99a7f5;
+    border-radius: 20px;
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.35);
+}
+.add_btn_head_blue .nk-nav-text{
+    color: rgb(9, 27, 109);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.add_btn_head_blue a em{
+    color: rgb(10, 18, 117);
+    font-size: 20px;
+}
+.total_sidebar .nk-menu-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bank_data{
+    padding: 15px 0px;
+}
+
+.bank_data .add_party {
+   padding-right: 10px;
+}
+
+
+
+.client_datafull .add_party .btn{
+    padding: 4px 11px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.client_datafull .add_party {
+    display: table;
+    margin: 0 0 0 auto;
+    padding-bottom: 10px;
+}
+.client_datafull .nk-content{
+    padding:1rem;
+}
+.client_data {
+    /* height: 100vh; */
+    padding: 15px 9px;
+}
+.client_data .dataTable-search{
+    width: 100%;
+}
+.client_data .dataTable-input{
+    width: 100%;
+}
+.client_datafull .client_data .dataTable-dropdown{
+    display: none;
+}
+.three_dot{
+    width: 15px;
+    margin: 0 auto;
+}
+
+.client_data table tr{
+   cursor: pointer;
+}
+
+
+/* .client_data table tr:hover{
+    background-color: pink;
+} */
+
+.active2{
+    background-color: pink;
+}
+
+.three_dot ul {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    row-gap: 3px;
+}
+.three_dot ul li{
+    width: 3px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 50%;
+    
+}
+
+.drop_option{
+    min-width: 150px;
+}
+.drop_option ul li{
+    padding: 8px 20px;
+}
+
+.client_detail_div{
+    display: flex;
+    justify-content: space-between;
+}
+.client_detail_div_part p{
+    font-size: 14px;
+    margin: 0;
+    padding-bottom: 5px;
+}
+#mytable tbody tr td .btn {
+    padding: 3px 4px;
+    color: #fff !important;
+    font-weight: 600;
+}
+#mytable-income tbody tr td .btn {
+    padding: 3px 4px;
+    color: #fff;
+    font-weight: 600;
+}
+#mytable tbody tr td{
+    border-right: 1px solid #dbd7d7;
+    text-align: start;
+}
+
+#mytable-income tbody tr td{
+    border-right: 1px solid #dbd7d7;
+}
+#mytable .overline-title {
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#mytable-income .overline-title {
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+}
+.add_address{
+    color: rgb(16, 14, 133);
+    font-weight: 600;
+    font-size: 14px;
+}
+.add_address:hover{
+    color: rgb(16, 14, 133) !important;
+}
+
+.t_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.all_btn .add_more{
+   padding: 5px 12px;
+}
+
+.quantity_put {
+    display: flex;
+    justify-content: space-between;
+    column-gap:15px;
+}
+.quantity_put .input_div{
+    width: 101px;
+}
+/* .quantity_put .form-group .form-select{
+    width: 80px;
+} */
+
+
+
+/* expenses no page */
+
+.expen_no {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.expen_no p {
+    font-size: 13px;
+    font-weight: 600;
+}
+.expen_no input {
+    width: 215px;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    height: 27px;
+}
+
+.expen_date{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.expen_date p{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.expen_date input {
+    width: 215px;
+    /* border: none;
+    border-bottom: 1px solid #000; */
+    border-radius: 0;
+    height: 27px;
+}
+
+#myexpense .overline-title {
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+}
+#myexpense th{
+    border-right:1px solid #dbd7d7;
+    text-align: center;
+
+}
+/* 
+ .dataTable-table th{
+    border-right:1px solid #dbd7d7;
+
+} */
+
+#myexpense tbody tr td{
+    border-right:1px solid #dbd7d7;
+    text-align: center;
+}
+#myexpense tbody tr td .btn{
+    font-weight: 600;
+}
+.pay_detail_docu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.pay_detail_docu .form-control-wrap .form-select {
+    width: 160px;
+    height: 32px;
+    padding: 0 13px;
+}
+.pay_total {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    column-gap: 15px;
+}
+.pay_total .form-check .form-check-label{
+    color: gray;
+    font-size: 13px;
+}
+.pay_total .form-group{
+    display: flex;
+    align-items: baseline;
+    column-gap: 7px;
+}
+.pay_total .form-group .form-label{
+    color: gray;
+    font-size: 13px;
+
+}
+.pay_total .form-group .form-control{
+    width: 190px;
+    height: 30px;
+}
+.pay_detail_docu .add_descp{
+    margin-top: 7px;
+}
+.pay_detail_docu .add_descp textarea.form-control{
+    /* height: 60px !important; */
+    min-height: auto;
+}
+
+/* add item */
+.total_pricediv {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+.total_pricediv .pricediv{
+    width: 30%;
+}
+.item_detail{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-bottom: 15px;
+}
+
+.item_price{
+    display: flex;
+    align-items: center;
+    column-gap: 0px;
+    margin-top: 15px;
+}
+.item_price .form-control-wrap .form-control{
+    width: 140px;
+    border-radius: 0px;
+   
+}
+
+.item_price .form-control-wrap .form-select{
+    border-radius: 0px;
+
+}
+/* #wholesale{
+    display: none;
+} */
+.wholesale_price_div {
+    display: flex;
+    align-items: center;
+    column-gap: 0px;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.wholesale_price_div .form-control-wrap .form-control{
+    width: 140px;
+    border-radius: 0px;
+   
+}
+
+.wholesale_price_div .form-control-wrap .form-select{
+    border-radius: 0px;
+
+}
+.tax_rate{
+    position: relative;
+}
+.tax_rate label {
+    position: absolute;
+    top: -10px;
+    z-index: 999;
+    background-color: #fff;
+    left: 4%;
+    color: gray;
+    font-size: 12px;
+}
+
+
+.price_tab .nav-tabs-s1 .nav-link.active {
+    color: #cc0808;
+}
+
+.price_tab .nav-tabs-s1 .nav-link::after {
+    background-color: #cc0808;
+}
+.price_tab .nav-link {
+    color:#000;
+    font-weight: 600;
+}
+.add_wholesale{
+    font-weight: 700;
+    font-size: 14px;
+    color: rgb(6, 6, 104);
+}
+.add_wholesale:hover{
+    color: #cc0808 !important;
+}
+
+
+/* sale details page */
+
+.total_mnth_select{
+    display: flex;
+    align-items: baseline;
+    column-gap: 8px;
+}
+.mnth_select .form-control-wrap .form-select {
+    border: transparent;
+    font-weight: 600;
+    font-size: 18px;
+}
+.date_select {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dbd8d8;
+}
+.date_select p {
+    margin-bottom: 0;
+    background-color: gray;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 5px;
+}
+.date_select .form-control-wrap .form-control-sm{
+    border: transparent;
+}
+.date_select .form-control-wrap ::placeholder{
+font-size: 13px;
+}
+.total_amount {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-top: 15px;
+}
+.total_amount .amount_div {
+    background-color: #8ce7ce;
+    width: 200px;
+    /* height: 60px; */
+    padding: 10px 15px;
+    border-radius: 7px;
+}
+.total_amount .amount_div p{
+margin-bottom: 0;
+}
+.icon_div em{
+    font-weight: 800;
+    color: #000;
+    font-size: 20px;
+}
+
+
+
+
+
+/* dashboard page */
+#more-data{
+    display: none;
+}
+.prcnt_down{
+    padding-top: 20px;
+}
+.sale_detail{
+    display: flex;
+    align-items: center;
+}
+.sale_detail .amount_detail{
+    width: 45%;
+}
+.sale_detail .graph_detail{
+    width: 55%;
+}
+.col_pur{
+    padding: 0;
+    padding-left: 5px;
+}
+.col_re{
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.col_py{
+    padding: 0;
+    padding-right: 5px;
+}
+.client_namediv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+.client_namediv a{
+    cursor: pointer;
+}
+
+.client_namediv .client_name{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+}
+.list_detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.list_detail p{
+    font-size: 12px;
+    color: gray;
+}
+
+
+/* bank accountn page */
+.bank_detail_div {
+    display: flex;
+    justify-content: space-between;
+}
+.bank_detail_div{
+    margin-bottom: 10px;
+}
+.bank_detail_div h4{
+    margin: 0;
+    font-size: 14px;
+}
+
+.bank_detail_div p{
+    margin: 0;
+}
+
+
+/* party statement page */
+.prty_selct{
+    width: 154px;
+}
+.view_check {
+    display: flex;
+    column-gap: 13px;
+    padding-left: 21px;
+    margin-top: 15px;
+}
+
+.view_check p{
+    font-size: 13px;
+}
+.all_party_list {
+    margin-top: 14px;
+}
+
+.total_sale_amount {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    border-top: 3px solid #706f6f;
+    padding: 7px 10px 0px  10px;
+}
+
+.total_sale_amount p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.balance_sheet .date_select {
+    display: flex;
+    align-items: center;
+    border: transparent;
+    column-gap: 15px;
+    padding: 0;
+}
+
+.balance_sheet .date_select .form-control-wrap .form-control-sm {
+    border: 1px solid rgb(204, 204, 204);
+}
+
+
+/* cash flow */
+.cash_hand_amount{
+    font-weight: 600;
+    color: #20a94a;
+    margin-top: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.save_btn{
+display: flex;
+justify-content: flex-end;
+}
+
+.save_btn .btn {
+    padding: 10px 21px;
+    font-size: 17px;
+}

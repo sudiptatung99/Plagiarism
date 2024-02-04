@@ -1,0 +1,109 @@
+<section class="breadcrumb-section">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="['/workspace']">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"> VERSION FOR READING</li>
+                    </ol>
+                </nav>
+                <h2 class="page-title"> VERSION FOR READING</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div *ngIf="loader">
+    <div class="preloade">
+        <div class="content">
+            <div class="loader-circle"></div>
+            <div class="loader-line-mask one">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-mask two">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!loader">
+    <section class="report-reading-part-section">
+        <div class="container">
+            <div class="report-header">
+                <div class="report-name-info">
+                    <div class="report-type">
+                        <div class="type-item">Page No.: <span *ngIf="pageNo">{{pageNo}}</span><span *ngIf="!pageNo">Not
+                                specified</span> </div>
+                        <div class="type-item">Document Type: <span
+                                *ngIf="documentDetails.type">{{documentDetails.type}}</span><span
+                                *ngIf="!documentDetails.type">Not specified</span></div>
+                        <div class="type-item">Document: <span
+                                *ngIf="documentDetails.name != ''">{{documentDetails.name.split('.')[0]}}</span></div>
+                    </div>
+                    <div class="doument-name" *ngIf="documentDetails.name != ''">{{documentDetails.name.split('.')[0]}}
+                    </div>
+                    <div class="report-card-list">
+                        <div class="report-card-item">
+                            <div class="data-item">
+                                <div class="sub-text">Uploading Date:</div>
+                                <div class="data">{{documentDetails.created_at | date: 'dd.M.yyyy hh:mm:ss'}}</div>
+                            </div>
+                            <div class="data-item">
+                                <div class="sub-text">Initial file name:</div>
+                                <div class="data">{{documentDetails.name}}</div>
+                            </div>
+                            <div class="data-item">
+                                <div class="sub-text">File size:</div>
+                                <div class="data">{{textLength}} KB</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="report-reading-section">
+        <div class="container">
+            <div class="row">
+                <a [routerLink]="['/workspace']" class="back-action">
+                    <i class="fas fa-arrow-circle-left me-2"></i> Back to workspace
+                </a>
+                <div class="report-reading">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                data-bs-target="#text-view-pane" type="button" role="tab" aria-controls="text-view-pane"
+                                aria-selected="true">Text View</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="original-view" (click)="original_view()" data-bs-toggle="tab"
+                                data-bs-target="#original-view-pane" type="button" role="tab"
+                                aria-controls="original-view-pane" aria-selected="false">Original View</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="text-view-pane" role="tabpanel"
+                            aria-labelledby="text-view" tabindex="0">
+                            <div class="text-view-area">
+                                <p>{{documentDetails.doc_text}}</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="original-view-pane" role="tabpanel"
+                            aria-labelledby="original-view" tabindex="0">
+                            <div class="original-view-part">
+                                <div *ngIf="loading">
+                                    <app-loader></app-loader>
+                                </div>
+                                <!-- <iframe [src]="pdfView" width="100%" height="500"></iframe> -->
+                                <ngx-doc-viewer *ngIf="!loading" url="{{pdfView}}" viewer="google"
+                                    style="width:100%;height:50vh;"></ngx-doc-viewer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,108 @@
+<div class="nk-app-root">
+    <div class="nk-main">
+        <div class="nk-wrap align-items-center justify-content-center">
+            <div class="container p-2 p-sm-4">
+                <div class="wide-xs mx-auto">
+                    <div class="text-center mb-5 mt-4">
+                        <div class="brand-logo mb-1">
+                            <div class="logo-wrap">
+                                <img src="assets/images/logo.svg" height="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-gutter-lg rounded-4 card-auth col-4 m-auto">
+                        <div class="card-body">
+                            <div class=" text-center p-2"> 
+                                <h3 class="nk-block-title mb-1">Register</h3>
+                                <!-- <p class=" font-semibold">Please sign in to your account and start the adventure.</p> -->
+                            </div> 
+                            <form (ngSubmit)="onRegister(ff)" #ff="ngForm" *ngIf="!otpActive"> 
+                                <div class="row gy-3 m-auto">
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">First Name</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" pattern="[A-Za-z]*" name="firstname" [(ngModel)]="registerObj.firstname" #firstname="ngModel" required>
+                                            </div>                                             
+                                        </div> 
+                                        <span class="error-text" *ngIf="!firstname.valid && firstname.touched"><i class="fa fa-exclamation-triangle fa-icon" aria-hidden="true"></i> Please enter on alphabets only !</span>
+                                    </div> 
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Last Name</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" pattern="[A-Za-z]*" name="lastname" [(ngModel)]="registerObj.lastname" #lastname="ngModel" required>
+                                            </div> 
+                                            <span class="error-text" *ngIf="!lastname.valid && lastname.touched"><i class="fa fa-exclamation-triangle fa-icon" aria-hidden="true"></i> Please enter on alphabets only !</span>
+                                        </div> 
+                                    </div> 
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Email ID</label>
+                                            <div class="form-control-wrap">
+                                                <input type="email" class="form-control" name="email" email [(ngModel)]="registerObj.email" #email="ngModel" required>
+                                            </div> 
+                                            <span class="error-text" *ngIf="!email.valid && email.touched"><i class="fa fa-exclamation-triangle fa-icon" aria-hidden="true"></i> Please enter your valid email id !</span>
+                                        </div>
+                                    </div> 
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Phone Number</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" pattern="[0-9]+" class="form-control" name="phone_number"  [(ngModel)]="registerObj.phone_number" #phone_number="ngModel" required>
+                                            </div> 
+                                        </div>
+                                        <span class="error-text" *ngIf="!phone_number.valid && phone_number.touched"><i class="fa fa-exclamation-triangle fa-icon" aria-hidden="true"></i> Please enter on number only !</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Company Name</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" pattern="[A-Za-z\s]+" name="company_name"  [(ngModel)]="registerObj.company_name"  #company_name="ngModel" >
+                                            </div> 
+                                        </div>
+                                        <span class="error-text" *ngIf="!company_name.valid && company_name.touched"><i class="fa fa-exclamation-triangle fa-icon" aria-hidden="true"></i> Please enter on alphabets only !</span>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Password</label> 
+                                            <div class="form-control-wrap">
+                                                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="password" [(ngModel)]="registerObj.password" #password="ngModel" required>
+                                            </div>
+                                            <span class="error-text" *ngIf="!password.valid && password.touched"><i class="fa fa-exclamation-triangle fa-icon" aria-hidden="true"></i> Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters !</span>
+                                        </div>
+                                    </div>   
+                                    <div class="col-12 mb-4 mt-4">
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" [disabled]="!ff.valid" type="submit">Register</button>
+                                        </div>
+                                    </div>
+                                    <p class="text-center">Already have an account? <a [routerLink]="['/login']" class="font-bold">Login</a></p> 
+                                </div> 
+                            </form>
+                            <form (ngSubmit)="otpVerify(ff)" #ff="ngForm" *ngIf="otpActive"> 
+                                <div class="row gy-3 m-auto">
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">OTP</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" name="otp" [(ngModel)]="registerObj.otp" #otp="ngModel" required>
+                                            </div> 
+                                        </div> 
+                                    </div> 
+                                    <small>Enter your 6 digit OTP.</small>
+                                    <div class="col-12 mb-4 mt-4">
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" [disabled]="!ff.valid" type="submit">Verify OTP</button>
+                                        </div>
+                                    </div>
+                                    <p class="text-center">Already have an account? <a [routerLink]="['/login']" class="font-bold">Login</a></p> 
+                                </div> 
+                            </form>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

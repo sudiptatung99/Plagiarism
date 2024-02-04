@@ -1,0 +1,90 @@
+<section class="breadcrumb-section">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="['/workspace']">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Transaction</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard-section">
+    <div class="container">
+        <div class="row">
+            <div class="">
+                <div *ngIf="isLoader">
+                    <app-loader></app-loader>
+                </div>
+                <div  *ngIf="!isLoader">
+                    <div *ngIf="user_plan.length>0">
+                        <div class="col-md-12">
+                            <div class="transaction-section  ">
+                                <div class="transaction-title text-center">Transaction Details</div>
+                                <hr>
+                                <div class="trans-lists">
+                                    <div class="trans-item" *ngFor="let plan of user_plan">
+                                        <div class="trans-details ">
+                                            <div class="data-wrap">
+                                                <div class="data-item">
+                                                    <div class="sub-text">Transaction ID</div>
+                                                    <div class="data">#{{plan.transaction_id }}</div>
+                                                </div>
+                                                <div class="data-item status">
+                                                    <div class="sub-text">Payment Status</div>
+                                                    <div class="data failed" *ngIf="plan.status=='Failure'">
+                                                        {{plan.status }}
+                                                    </div>
+                                                    <div class="data success" *ngIf="plan.status=='Success'"
+                                                        style="color: green;">{{plan.status }}</div>
+                                                </div>
+                                            </div>
+                                            <div class="data-wrap-alt">
+                                                <div class="data-item">
+                                                    <div class="sub-text">Date</div>
+                                                    <div class="data">{{ plan.created_at | date:'dd/MM/yyyy' }}
+                                                    </div>
+                                                </div>
+                                                <div class="data-item">
+                                                    <div class="sub-text">Payment Mode</div>
+                                                    <div class="data">ONLINE</div>
+                                                </div>
+                                                <div class="data-item">
+                                                    <div class="sub-text">Payment Amount</div>
+                                                    <div class="data">INR : {{ plan.amount }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12 d-flex justify-content-center" *ngIf="user_plan.length==0" style="margin:45px 0;">
+                <div class="transaction-section  ">
+                    <img src="assets/images/credit_card.png" alt="" style="width: 177px;margin: 0 40px;">
+                    <h3>Transaction not found !</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<script>
+    $('[data-bs-toggle="tooltip"]').tooltip();
+    $('[data-bs-toggle="tooltip"]').click(function () {
+        $(this).tooltip('hide');
+    });
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>

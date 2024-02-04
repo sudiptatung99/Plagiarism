@@ -1,0 +1,22 @@
+
+<div *ngIf="isLoader">
+    <app-loader></app-loader>
+</div>
+<section class="dashboard-section" *ngIf="!isLoader">
+    <div class="container">
+        <div class="row" style="margin-bottom: 20px;">
+            <div class=content>
+                <div class="wrapper-1">
+                    <div class="wrapper-2">
+                        <img src="assets/images/success.png" alt="" style="height: 200px;">
+                        <h1>Thank you !</h1>
+                        <p style="font-size: 2rem;margin-bottom: 30px; color: rgb(98, 98, 255);">Payment Success</p>
+                        <p>{{ document }} documents has been credited successfully.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">

@@ -1,0 +1,169 @@
+<section class="breadcrumb-section">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="['/workspace']">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard-section">
+    <div class="container">
+        <div class="row">
+            <div class="dashboard-part">
+                <div class="dashboard-left" style="max-width:unset !important">
+                    <div *ngIf="loading">
+                        <app-loader></app-loader>
+                    </div>
+                    <div class="nk-app-root " *ngIf="!loading" style="display: flex;">
+                        <div class="nk-main col-8">
+                            <div class="nk-wrap align-items-center justify-content-center">
+                                <div class="container p-2 p-sm-4">
+                                    <div class="wide-xs mx-auto">
+                                        <div class="card card-gutter-lg rounded-4 card-auth col-12 m-auto">
+                                            <div class="card-body">
+                                                <div class=" text-center p-2">
+                                                    <h3 class="nk-block-title mb-1">Profile Information</h3>
+                                                </div>
+                                                <form (ngSubmit)="onProfile(profile)" #profile="ngForm">
+                                                    <div class="row gy-3 m-auto">
+                                                        <div class="col-12">
+                                                            <div class="form-group mb-0">
+                                                                <label class="form-label">First Name</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control" name="firstname"
+                                                                         [(ngModel)]="profileObj.firstname"
+                                                                        #firstname="ngModel" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group mb-0">
+                                                                <label class="form-label">Last Name</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control" name="lastname"
+                                                                         [(ngModel)]="profileObj.lastname"
+                                                                        #lastname="ngModel" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group mb-0">
+                                                                <label class="form-label">Email ID</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="email" class="form-control"
+                                                                        name="email" email
+                                                                        [(ngModel)]="profileObj.email" #email="ngModel"
+                                                                        required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group mb-0">
+                                                                <label class="form-label">Phone Number</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        name="phone_number"
+                                                                        [(ngModel)]="profileObj.phone_number"
+                                                                        #name="ngModel" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group mb-0">
+                                                                <label class="form-label">Company Name / Institute Name</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        name="company_name"
+                                                                        [(ngModel)]="profileObj.company_name"
+                                                                        #name="ngModel" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                        </div>
+                                                        <div class="col-12 mb-4">
+                                                            <div class="">
+                                                                <button class="btn btn-theme-blue"
+                                                                    type="submit">Update Profile</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nk-main col-4">
+                            <div class="nk-wrap align-items-center justify-content-center">
+                                <div class="container p-2 p-sm-4">
+                                    <div class="wide-xs mx-auto">
+                                        <div class="card card-gutter-lg rounded-4 card-auth col-12 m-auto">
+                                            <div class="card-body">
+                                                <div class=" text-center p-2">
+                                                    <h3 class="nk-block-title mb-1">Change Password</h3>
+                                                </div>
+                                                <form action="" (ngSubmit)="onPassword(profile)" #profile="ngForm">
+                                                    <div class="row gy-3 m-auto">
+                                                        <div class="col-12">
+                                                            <div class="form-group mb-0">
+                                                                <label class="form-label">Current Password</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="password" class="form-control"
+                                                                        [(ngModel)]="passwordObj.current_password"
+                                                                        #current_password="ngModel"
+                                                                        name="current_password" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group mb-0">
+                                                                <label class="form-label">New Password</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="password" class="form-control"
+                                                                        [(ngModel)]="passwordObj.password"
+                                                                        #password="ngModel" name="password">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group mb-0">
+                                                                <label class="form-label">Confirm Password</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="password" class="form-control"
+                                                                        [(ngModel)]="passwordObj.password_confirmation"
+                                                                        #password_confirmation="ngModel"
+                                                                        name="password_confirmation">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                        </div>
+                                                        <div class="col-12 mb-4">
+                                                            <div class="">
+                                                                <button class="btn btn-theme-blue"
+                                                                    type="submit">Update Password</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,290 @@
+
+.price-button {
+    cursor: pointer;
+}
+.plan-details {
+    border-top: 1px solid var(--fourthColor);
+    padding-top: 5px;
+}
+
+.plan-details .plan-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.plan-details .plan-item {}
+
+.plan-details .plan-item+.plan-item {}
+
+.plan-details .plan-data {}
+
+.plan-details .plan-data.status {
+    width: 250px;
+    text-align: right;
+}
+
+.plan-details .plan-details-info {
+    margin-top: 2px;
+    margin-left: -5px;
+}
+
+.plan-details .plan-details-info span {
+    background: var(--fifthColor);
+    padding: 3px 4px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 5px;
+    display: inline-block;
+}
+
+.plan-details .plan-details-info span+span {}
+/*  */
+.full_rate_plan {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--thirdColor);
+}
+.full_rate_plan .full_rate_plan_header {
+	display: flex;
+	align-items: center;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.full_rate_plan .full_rate_plan_header h5 {
+    margin-bottom: 0;
+    color: var(--shades02);
+    font-size: 16px;
+    white-space: nowrap !important;
+}
+.full_rate_plan .full_rate_plan_header i {
+	color: var(--shades03);
+    font-size: 14px;
+    margin: 0 5px;
+}
+.full_rate_plan .full_rate_plan_header span {
+	background-color: var(--secondaryColor);
+    color: var(--shades01);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 6px;
+}
+.full_rate_plan .full_rate_plan_body .plan_rate {
+    color: var(--shades02);
+    font-weight: 700;
+    line-height: 1;
+}
+.full_rate_plan .full_rate_plan_body .plan_rate span {
+    font-size: 40px;
+    color: var(--secondaryColor);
+}
+.full_rate_plan .full_rate_plan_body .pl_modules {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.purchase_check_cont {
+	position: relative;
+    border-top: 5px solid var(--secondaryColor);
+}
+.purchase_check_cont .col-md-7 {
+    background-color: var(--thirdColor);
+}
+.purchase_check_cont .col-md-5 {
+    background-color: var(--fourthColor);
+}
+.purchase_check_cont .purchase_check_wrap {
+    padding: 30px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_header h5 {
+    color: var(--shades02);
+    margin-bottom: 0;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_header span {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #6AA6D2;
+    background-color: var(--fourthColor);
+    border-radius: 3px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body {
+    padding-top: 20px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .pl_check_no {
+    margin-bottom: 20px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .pl_check_no p {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .pl_check_no input {
+    width: 80px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .pl_price {
+    margin-bottom: 20px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .pl_price p {
+    font-size: 14px;
+    margin-bottom: 0;
+    padding-right: 50px;
+    position: relative;
+    color: var(--sixthColor);
+    line-height: 1;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .pl_price p .current_price {
+    color: var(--primaryColor);
+    font-weight: bold;
+    font-size: 30px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .pl_price p .discount_price {
+    font-size: 18px;
+    position: absolute;
+    white-space: nowrap;
+    top: -20px;
+    right: 0;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range {
+    position: relative;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range input {
+    width: 100%;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range {
+    position: relative;
+    min-height: 16px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label {
+    position: absolute;
+    
+}   
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label:after {
+    content: '';
+    position: absolute;
+    top: -22px;
+    right: 50%;
+    width: 1px;
+    height: 20px;
+    background-color: #bfbfbf;
+    transform: translateX(-50%);
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label._1 {
+    left: 0;
+    top: 0;
+    font-weight: 600;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label._1:after {
+    display: none;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label._2 {
+    left: 5.6%;
+    top: 0;
+    transform: translateX(-10%);
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label._10 {
+    left: 38.3%;
+    top: 0;
+    transform: translateX(-30%);
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label._20 {
+    left: 80%;
+    top: 0;
+    transform: translateX(-70%);
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label._25 {
+    right: 0;
+    top: 0;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .price_range .dicsount_range label._25:after {
+    display: none;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .check_list {
+    padding-top: 80px;
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .check_list .check_list_items {
+    font-size: 13px;
+    color: var(--shades02);
+}
+.purchase_check_cont .purchase_check_wrap .purchase_check_wrap_body .check_list .check_list_items i {
+    color: var(--secondaryColor);
+}
+.purchase_check_cont .pl_cost_wrap {
+    padding: 0px;
+}
+.purchase_check_cont .pl_cost_wrap .pl_cost_wrap_header {
+    font-weight: 600;
+    color: var(--shades02);
+    font-size: 20px;
+    padding: 30px;
+}
+.purchase_check_cont .pl_cost_wrap .pl_cost_wrap_body {
+    padding: 0px 30px 30px 30px;
+}
+.btn-theme-red {
+    background-color: var(--primaryColor);
+    color: var(--shades01);
+    padding: 10px;
+}
+.purchase_check_cont .accordion-button:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--shades01);
+}
+.purchase_check_cont .pay_details .pay_details_items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 8px 0;
+}
+.purchase_check_cont .pay_details .pay_details_items::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 2px;
+    border: 1px dashed var(--sixthColor);
+    left: 0;
+    z-index: 1;
+}
+.purchase_check_cont .pay_details .pay_details_items .pay_names {
+    color: var(--sixthColor);
+    position: relative;
+    z-index: 2;
+    background-color: var(--fourthColor);
+    padding-right: 10px;
+}
+
+.purchase_check_cont .pay_details .pay_details_items .pay_Amount {
+    color: var(--shades02);
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    background-color: var(--fourthColor);
+    padding-left: 10px;
+}
+.purchase_check_cont .pl_cost_wrap .pl_cost_wrap_body .pl_pay_points {
+    color: var(--shades03);
+}
+.purchase_check_cont .pl_cost_wrap .pl_cost_wrap_body .pl_pay_points i {
+    font-size: 18px;
+}
+.purchase_check_cont .pl_cost_wrap .pl_promo_apply {
+    color: var(--shades03);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}

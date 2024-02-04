@@ -1,0 +1,50 @@
+<div class="nk-app-root">
+    <div class="nk-main">
+        <div class="nk-wrap align-items-center justify-content-center">
+            <div class="container p-2 p-sm-4">
+                <div class="wide-xs mx-auto">
+                    <div class="text-center mb-5 mt-4">
+                        <div class="brand-logo mb-1">
+                            <div class="logo-wrap">
+                                <img src="assets/images/logo.svg" height="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-gutter-lg rounded-4 card-auth col-4 m-auto">
+                        <div class="card-body">
+                            <div class=" text-center p-2">
+                                <h3 class="nk-block-title mb-1">Enter OTP</h3>
+                                <!-- <p class=" font-semibold">Ent 
+                                </p> -->
+                            </div>
+                            <form (ngSubmit)="onGetOtp(ff)" #ff="ngForm">
+                                <div class="row gy-3 m-auto">
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">OTP</label>
+                                            <div class="form-control-wrap">
+                                                <input type="number" class="form-control" name="otp"
+                                                    [(ngModel)]="otpObj.otp" #otp="ngModel" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <small>Enter your 6 digit OTP.</small>
+                                    <div class="col-12 mt-2">
+                                        <div class="d-flex flex-wrap justify-content-between">
+                                            <a (click)="resendOtp()" class="font-bold float-end" href="javascript:void(0);">Resend OTP?</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-4 mt-3">
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" [disabled]="!ff.valid" type="submit">Verify OTP</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

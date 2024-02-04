@@ -1,0 +1,178 @@
+<header>
+    <div *ngIf="loader">
+        <app-loader></app-loader>
+    </div>
+    <!-- <div class="container sub-nav" *ngIf="!loader">
+        <div class="row justify-content-end align-items-center">
+
+        </div>
+    </div> -->
+    <!-- <div class="offer-bar position-relative" *ngIf="closePopup">
+        <p class="offer_text text-center">
+            <img src="assets/images/offer-star.svg" alt="">
+            35% Off for year end offer! Purchase Now!
+        </p>
+        <a (click)="close()" class="offer-close">
+            <img src="assets/images/close.svg" alt="close">
+        </a>
+    </div> -->
+    <div class="header-info">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-3">
+                    <a [routerLink]="['/workspace']" class="brand-logo">
+                        <img src="assets/images/logo.svg" alt="">
+                    </a>
+                </div>
+                <!-- <div class="col-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="stat-part-header">
+                                <div class="stat-item">
+                                    <div class="icon">
+                                        <i class="far fa-chart-bar"></i>
+                                    </div>
+                                    <div class="text-part">
+                                        <div class="number" *ngIf="dashboardDetails">{{dashboardDetails.totalDocument}}
+                                        </div>
+                                        <div class="text-des">Total Document</div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="icon">
+                                        <i class="far fa-file-signature"></i>
+                                    </div>
+                                    <div class="text-part">
+                                        <div class="number" *ngIf="dashboardDetails">{{dashboardDetails.totalLetter}}</div>
+                                        <div class="text-des">Total No. Of Letter</div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="icon">
+                                        <i class="far fa-tag"></i>
+                                    </div>
+                                    <div class="text-part">
+                                        <div class="number" *ngIf="dashboardDetails">{{dashboardDetails.duePlanLetter}}
+                                        </div>
+                                        <div class="text-des">Total Due Letter</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col d-flex justify-content-end pl-new-support-hdr">
+                            <!-- <div class="other-menus">
+                                <div class="menu-item" [routerLink]="['/contact']" style="cursor: pointer;">
+                                    <i class="far fa-user-headset mr-2"></i> Support
+                                </div>
+                                <div class="menu-item" [routerLink]="['/plan']" style="cursor: pointer;">
+                                    <i class="far fa-tags mr-2"></i> Plan
+                                </div>
+                            </div> -->
+
+                            <div class="pl-support-wrap">
+                                <div class="pl-support-wrap-item" *ngIf="dashboardDetails">
+                                    <div class="pl-support-title">Remaining Document</div>
+                                    <div class="pl-support-desc">
+                                        <span class="h6">{{dashboardDetails.remainDoc }}</span>
+                                    </div>
+                                    <div class="pl-support-button-blue"  (click)="check_document()">
+                                        Check Document
+                                    </div>
+                                </div>
+                                <div class="pl-support-wrap-item" *ngIf="dashboardDetails">
+                                    <div class="pl-support-title">Plan Active</div>
+                                    <div class="pl-support-desc">
+                                        <span *ngIf="dashboardDetails.plan>0">{{ dashboardDetails.plan }} Days</span>
+                                        <span *ngIf="!dashboardDetails.user.exp_date">0</span>
+                                        <span *ngIf="dashboardDetails.plan==0 && dashboardDetails.user.exp_date">Today Expired</span>
+                                        <span class="h6" style="color: red;"
+                                            *ngIf="dashboardDetails.plan=='Expired' && dashboardDetails.user.exp_date">{{ dashboardDetails.plan }}</span>
+                                        <!-- <span class="ms-1"><img src="assets/images/pl-rate-plan.svg" alt=""></span> -->
+                                    </div>
+                                    <div class="pl-support-button-blue" *ngIf="!planBlock" [routerLink]="['/plan']">
+                                        Buy Document
+                                    </div>
+                                    <div class="pl-support-button-blue" style=" background-color: #6da2bd;" *ngIf="planBlock" (click)="showError()">
+                                        Buy Document
+                                    </div>
+                                </div>
+                                <div class="pl-support-wrap-item">
+                                    <div class="pl-support-title">Support</div>
+                                    <div class="pl-support-desc mailtxt">
+                                        <a href="mailto:support@gmail.com">support@eaarjav.com</a>
+                                    </div>
+                                    <div class="pl-support-button-red" [routerLink]="['/contact']">
+                                        Contact
+                                    </div>
+                                </div>
+                                <!-- <div class="pl-support-wrap-item" *ngIf="dashboardDetails">
+                                    <div class="pl-support-title">Use Document</div>
+                                    <div class="pl-support-desc">
+                                        <span class="h6">{{dashboardDetails.usesDoc}}</span>
+                                         <span class="mx-1"><img src="assets/images/pl-clock.svg" alt="" style="width: 14px;"></span>
+                                        <span class="text-muted">20 d</span> 
+                                    </div>
+                                    <div class="pl-support-button-red">
+                                        Check Count 
+                                    </div>
+                                </div> -->
+
+                            </div>
+                            <div class="user-options-header">
+                                <div class="user-part">
+                                    <div class="user-img">
+                                        <img *ngIf="!details.image" src="assets/images/user_logo.jpg" alt="">
+                                        <img *ngIf="details.image" src="{{details.image}}" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <div class="tag">{{details.firstname}} {{ details.lastname }} <span class="ms-2"><i
+                                                    class="fas fa-bell"></i></span>
+                                        </div>
+                                        <div class="data">{{ details.email }}</div>
+                                    </div>
+                                </div>
+                                <div ngbDropdown class="d-inline-block">
+                                    <div class="user-part" id="dropdownForm1" ngbDropdownToggle>
+                                        <div class="menu-drop"><i class="fal fa-bars"></i></div>
+                                    </div>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                                        <button type="button" ngbDropdownItem
+                                            [routerLink]="['/workspace']">Workspace</button>
+                                        <!-- <button type="button" ngbDropdownItem
+                                            >Dashboard</button> -->
+                                        <button type="button" ngbDropdownItem [routerLink]="['/profile']">Profile</button>
+                                        <button type="button" ngbDropdownItem [routerLink]="['/transaction']">Transaction
+                                            </button>
+                                        <button type="button" ngbDropdownItem *ngIf="!planBlock" [routerLink]="['/plan']">Plan
+                                            </button>
+                                            <button type="button" ngbDropdownItem *ngIf="planBlock" (click)="showError()" style="color: darkgrey;">Plan
+                                            </button>
+
+                                        <button type="button" ngbDropdownItem
+                                            [routerLink]="['/contact']">Support</button>
+                                        <button type="button" [routerLink]="['/statistics']" ngbDropdownItem>Statistics</button>
+                                        <button type="button" ngbDropdownItem class="logout-btn"
+                                            (click)="onLogout()">Log
+                                            Out</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <a>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>

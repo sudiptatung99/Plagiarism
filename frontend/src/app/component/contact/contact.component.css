@@ -1,0 +1,9 @@
+.faq-section{margin-top: 25px;}
+.faq-section .section-title{}
+.faq-section .accordion-part{}
+.accordion-button:focus{box-shadow: none;}
+.accordion-button{font-size: 16px;}
+
+.zsFormClass{background-color: transparent;}
+
+iframe body{overflow: hidden;}

@@ -1,0 +1,87 @@
+<div class="dashboard-right" *ngIf="url === 'contact'">
+    <div class="pl-support-wrap">
+        <div class="pl-support-items">
+            <div class="pl-icon">
+                <i class="far fa-envelope"></i>
+            </div>
+            <div class="pl-data-items">
+                <h5>E-mail:</h5>
+                <a href="javascript:void(0)" class="pl-data">support@eaarjav.com</a>
+            </div>
+        </div>
+        <div class="pl-support-items">
+            <div class="pl-icon">
+                <i class="far fa-phone-alt"></i>
+            </div>
+            <div class="pl-data-items">
+                <h5>Contact number:</h5>
+                <a href="javascript:void(0)" class="pl-data">+91 8412002525</a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="user-sidebar">
+        <div class="user-inner">
+            <div *ngIf="isLoader">
+                <app-loader></app-loader>
+            </div>
+            <div class="user-profile" *ngIf="!isLoader">
+                <div class="user-img">
+                    <img *ngIf="!details.image" src="assets/images/user_logo.jpg" alt="">
+                    <img *ngIf="details.image" src="{{details.image}}" alt="">
+                </div>
+                <div class="user-info">
+                    <div class="data-item">
+                        <div class="icon"><i class="far fa-user"></i></div>
+                        <div class="text">{{ details.name }}</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="icon"><i class="far fa-envelope"></i></div>
+                        <div class="text">{{ details.email }}</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="icon"><i class="far fa-calendar-check"></i></div>
+                        <div class="text"><span>Member Since:</span> {{ details.created_at | date: 'MMM dd, yyyy' }}</div>  
+                    </div>
+                    <div class="data-item">
+                        <div class="icon"><i class="far fa-credit-card"></i></div>
+                        <div class="text"><span>Subscription:</span><Span *ngIf="user_plan"> {{ user_plan.created_at | date: 'MMM dd, yyyy' }}</Span></div>
+                    </div>
+                </div>  
+            </div>
+            <div class="user-menu">
+                <a [routerLink]="['/workspace']" class="menu-item">
+                    <div class="text">Workspace</div>
+                    <div class="icon"><i class="fal fa-chevron-right"></i></div>
+                </a>
+                <a [routerLink]="['/dashboard']" class="menu-item" [class.active] = "url === 'dashboard'"> 
+                    <div class="text">Dashboard</div>
+                    <div class="icon"><i class="fal fa-chevron-right"></i></div>
+                </a>
+                <a [routerLink]="['/plan']" class="menu-item" [class.active] = "url === 'plan'">    
+                    <div class="text">Plan</div>
+                    <div class="icon"><i class="fal fa-chevron-right"></i></div>
+                </a>
+                <a [routerLink]="['/profile']" class="menu-item" [class.active] = "url === 'profile'">
+                    <div class="text">Profile Settings</div>
+                    <div class="icon"><i class="fal fa-chevron-right"></i></div>
+                </a>
+                <a href="" class="menu-item">
+                    <div class="text">Report Settings</div>
+                    <div class="icon"><i class="fal fa-chevron-right"></i></div>
+                </a>
+                <a [routerLink]="['/contact']" class="menu-item" [class.active] = "url === 'contact'">
+                    <div class="text">Support</div>
+                    <div class="icon"><i class="fal fa-chevron-right"></i></div>
+                </a>
+                <a href="" class="menu-item">
+                    <div class="text">Add Website</div>
+                    <div class="icon"><i class="fal fa-chevron-right"></i></div>
+                </a>
+            </div>
+        </div>
+        <button type="button" class="data-item alt" (click)="onLogout()">
+            <div class="text">Log Out</div>
+            <div class="icon"><i class="fal fa-chevron-right"></i></div>
+        </button>
+    </div> -->
+</div>

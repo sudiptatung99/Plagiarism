@@ -1,0 +1,63 @@
+<div class="nk-app-root">
+    <div class="nk-main">
+        <div class="nk-wrap align-items-center justify-content-center">
+            <div class="container p-2 p-sm-4">
+                <div class="wide-xs mx-auto">
+                    <div class="text-center mb-5 mt-4">
+                        <div class="brand-logo mb-1">
+                            <div class="logo-wrap">
+                                <img src="assets/images/logo.svg" height="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-gutter-lg rounded-4 card-auth col-4 m-auto">
+                        <div class="card-body">
+                            <div class=" text-center p-2"> 
+                                <h3 class="nk-block-title mb-1">Login to Account</h3>
+                                <p class=" font-semibold">Please sign in to your account and start the adventure.
+                                </p>
+                            </div> 
+                            <form (ngSubmit)="onLogin(ff)" #ff="ngForm">
+                                <div class="row gy-3 m-auto">
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Email ID</label>
+                                            <div class="form-control-wrap">
+                                                <input type="email" class="form-control" name="email" email [(ngModel)]="loginObj.email" #email="ngModel" required>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Password</label> 
+                                            <div class="form-control-wrap">
+                                                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="loginObj.password" #password="ngModel" required>
+                                                <span *ngIf="showpassword" ><i class="far fa-eye" style="position: absolute;position: absolute; top: 40px;left: 348px;" (click)="showPassword()"></i></span>
+                                                <span *ngIf="!showpassword" ><i class="fas fa-eye-slash" style="position: absolute;position: absolute; top: 40px;left: 348px;" (click)="hidePassword()"></i></span>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="col-12">
+                                        <div class="d-flex flex-wrap justify-content-between">
+                                            <div class="form-check form-check-sm">
+                                                <input class="form-check-input" type="checkbox" name="remember" id="remember_me">
+                                                <label class="form-check-label" for="remember_me">Remember Me</label>
+                                            </div>
+                                            <a [routerLink]="['/forget-password']" class="font-bold">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" [disabled]="!ff.valid" type="submit">Login to Account</button>
+                                        </div>
+                                    </div>
+                                    <p class="text-center">Don't have an account? <a [routerLink]="['/register']" class="font-bold">Register</a></p>
+                                </div> 
+                            </form>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

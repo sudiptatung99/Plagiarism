@@ -1,0 +1,62 @@
+<section class="breadcrumb-section">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="['/workspace']">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Statistics</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard-section" style="margin: 58px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="dashboard-part">
+                <div class="dashboard-left" style="margin: 0 auto;">
+                    <div *ngIf="isLoader">
+                        <app-loader></app-loader>
+                    </div>
+                    <div class="dashboard-stat" *ngIf="!isLoader">
+                        <div class="stat-header">
+                            <div class="text-title">Information </div>
+                            <div class="des">Document Usage Overview: Tracking Usage and Plan Allocation <br>
+                                It provides key insights into the current usage status, including the number of documents used, remaining documents available under the plan, and the total allocation including  remaining days. </div>
+                        </div>
+                        <div class="stat-cards-list">
+                            <div class="stat-card-item">
+                                <div class="icon"><i class="fal fa-file-signature"></i></div>
+                                <div class="text" *ngIf="dashboardDetails">{{total}}</div>
+                                <div class="sub-text">Total Document</div>
+                            </div>
+                            <div class="stat-card-item">
+                                <div class="icon"><i class="fal fa-file-signature"></i></div>
+                                <div class="text">{{dashboardDetails.remainDoc}}</div>
+                                <div class="sub-text">Remaining Document</div>
+                            </div>
+                            <div class="stat-card-item">
+                                <div class="icon"><i class="fal fa-file-signature"></i></div>
+                                <div class="text">{{dashboardDetails.usesDoc}}</div>
+                                <div class="sub-text">Uses Document</div>
+                            </div>
+                            <div class="stat-card-item">
+                                <div class="icon"><i class="fal fa-tag"></i></div>
+                                <span *ngIf="dashboardDetails.plan>0" class="text">{{ dashboardDetails.plan }} Days</span>
+                                <span *ngIf="!dashboardDetails.user.exp_date" class="text">0</span>
+                                <span *ngIf="dashboardDetails.plan==0" class="text">Today Expired</span>
+                                <span class="h6 text" style="color: red;"
+                                    *ngIf="dashboardDetails.plan=='Expired' && dashboardDetails.user.exp_date">{{
+                                    dashboardDetails.plan }}</span>
+                                <div class="sub-text">Plan Duration</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

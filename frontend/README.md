@@ -1,0 +1,2 @@
+# plagarisam
+# Plagiarism-angular
